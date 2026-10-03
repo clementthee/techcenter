@@ -1,0 +1,469 @@
+:root {
+    --blanco: #ffffff;
+    --texto: rgb(55, 55, 55);
+    --verde: #87a89b;
+    --azul: #5858ed;
+    --oscuro: #0e0e2f;
+    --tarjeta: rgb(212, 213, 255);
+    --sombra: rgba(0, 0, 0, 0.15);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--texto);
+    background-color: var(--blanco);
+}
+
+section {
+    scroll-margin-top: 80px;
+}
+
+/* La barra fija de arriba */
+.navbar {
+    padding: 15px 0;
+    box-shadow: 0 4px 16px rgba(14, 14, 47, 0.25);
+    animation: bajar 0.6s ease;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    letter-spacing: 0.04em;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: var(--verde) !important;
+    transform: scale(1.05);
+}
+
+.nav-link {
+    position: relative;
+    margin: 0 4px;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: 4px;
+    height: 2px;
+    background: var(--verde);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link:focus::after {
+    transform: scaleX(1);
+}
+
+.btn-modo {
+    position: relative;
+    width: 2.25rem;
+    height: 2.25rem;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-modo svg {
+    position: absolute;
+    width: 1.1rem;
+    height: 1.1rem;
+    transition: opacity 0.3s ease;
+}
+
+.btn-modo .icono-sol {
+    opacity: 0;
+}
+
+.btn-modo.es-oscuro .icono-luna {
+    opacity: 0;
+}
+
+.btn-modo.es-oscuro .icono-sol {
+    opacity: 1;
+}
+
+/* El degradado que se mueve, la bienvenida */
+.hero {
+    background: linear-gradient(135deg, var(--verde), var(--azul), var(--oscuro));
+    background-size: 180% 180%;
+    color: white;
+    padding: 100px 0;
+    animation: gradiente 12s ease infinite;
+}
+
+.hero h1 {
+    margin-bottom: 25px;
+    animation: aparecer 0.8s ease backwards;
+}
+
+.hero p {
+    margin-bottom: 25px;
+    animation: aparecer 0.8s ease 0.15s backwards;
+}
+
+.hero .btn {
+    animation: aparecer 0.8s ease 0.3s backwards;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+}
+
+.hero-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: flotar 3.5s ease-in-out infinite;
+}
+
+.hero-card .display-1 {
+    animation: pulso 2.4s ease-in-out infinite;
+}
+
+/* Los títulos con la rayita de colores */
+.section-title {
+    position: relative;
+    display: inline-block;
+    color: var(--oscuro);
+    font-weight: 700;
+    padding-bottom: 12px;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 72px;
+    height: 4px;
+    border-radius: 4px;
+    background: linear-gradient(90deg, var(--verde), var(--azul));
+    transform: translateX(-50%);
+    animation: crecer 0.8s ease both;
+}
+
+/* Las tarjetas que se levantan si les pasás el mouse */
+.service-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 16px;
+    box-shadow: 0 15px 30px var(--sombra);
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+    animation: aparecer 0.8s ease backwards;
+}
+
+.row .col-md-4:nth-child(2) .service-card {
+    animation-delay: 0.15s;
+}
+
+.row .col-md-4:nth-child(3) .service-card {
+    animation-delay: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(25, 2, 2, 0.35);
+}
+
+.service-icon {
+    font-size: 5rem;
+    margin-bottom: 20px;
+    transition: transform 0.4s ease;
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.12) rotate(-6deg);
+}
+
+.service-card .btn {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.service-card .btn:hover {
+    transform: scale(1.04);
+}
+
+/* El acordeón de los tips */
+.accordion {
+    overflow: hidden;
+    animation: aparecer 0.7s ease both;
+}
+
+.accordion-button {
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #e8e9ff;
+    color: var(--oscuro);
+}
+
+.accordion-body {
+    animation: aparecer 0.35s ease;
+}
+
+/* La galería, que las fotos no se vean chatas */
+.carousel {
+    animation: aparecer 0.8s ease both;
+}
+
+.galeria-img {
+    height: 500px;
+    object-fit: cover;
+}
+
+.carousel-item.active .galeria-img {
+    animation: zoom 8s ease both;
+}
+
+/* La tarjeta del formulario */
+.contact-card {
+    background-color: var(--tarjeta);
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 10px 15px 30px rgba(88, 90, 117, 0.4);
+    animation: aparecer 0.8s ease both;
+}
+
+.form-control,
+.form-select {
+    border-radius: 10px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--azul);
+    box-shadow: 0 0 0 0.2rem rgba(88, 88, 237, 0.25);
+}
+
+#formContacto button[type="submit"] {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#formContacto button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(88, 88, 237, 0.35);
+}
+
+/* El "ya lo recibimos"; lo muestra noche.js */
+.mensaje {
+    display: none;
+    background: var(--blanco);
+    padding: 30px;
+    text-align: center;
+    margin: 20px auto;
+    max-width: 400px;
+    animation: pop 0.45s ease;
+}
+
+.mensaje button {
+    margin-top: 15px;
+}
+
+/* El pie de la página */
+.footer {
+    background-color: rgb(98, 135, 236);
+    color: azure;
+    padding: 40px 0;
+}
+
+.footer h3 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.footer p {
+    color: #0e0e2f;
+}
+
+/* Cuando le dan a la luna y se hace de noche */
+[data-bs-theme="dark"] {
+    --blanco: #12141c;
+    --texto: #e8e8ef;
+    --tarjeta: #1e2140;
+    --oscuro: #f2f3ff;
+    --sombra: rgba(0, 0, 0, 0.45);
+}
+
+[data-bs-theme="dark"] .bg-light {
+    background-color: #181b28 !important;
+}
+
+[data-bs-theme="dark"] .service-card {
+    background-color: #1a1d2e;
+    border-color: #2c3150;
+    color: var(--texto);
+}
+
+[data-bs-theme="dark"] .accordion-button:not(.collapsed) {
+    background-color: #252849;
+    color: var(--oscuro);
+}
+
+[data-bs-theme="dark"] .mensaje {
+    color: var(--texto);
+}
+
+[data-bs-theme="dark"] .footer p {
+    color: #d7defa;
+}
+
+/* Los movimientos, para que no aparezca todo de golpe */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bajar {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes flotar {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes pulso {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.08);
+    }
+}
+
+@keyframes gradiente {
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes crecer {
+    from {
+        width: 0;
+    }
+    to {
+        width: 72px;
+    }
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(1.08);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes pop {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Para que en el cel no se vea todo amontonado */
+@media (max-width: 768px) {
+    .hero {
+        padding: 70px 0;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-card {
+        margin-top: 20px;
+    }
+
+    .galeria-img {
+        height: 320px;
+    }
+
+    .footer {
+        text-align: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .hero {
+        padding: 40px 0;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-card {
+        margin-top: 15px;
+        padding: 20px;
+    }
+
+    .service-icon {
+        font-size: 3.5rem;
+    }
+
+    .contact-card {
+        padding: 22px;
+    }
+
+    .galeria-img {
+        height: 220px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
