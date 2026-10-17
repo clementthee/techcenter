@@ -25,6 +25,17 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
+    const servicio = document.getElementById("servicioContacto");
+
+    // Un clic en una tarjeta deja ese servicio elegido en el formulario.
+    document.querySelectorAll("[data-servicio]").forEach(function (enlace) {
+        enlace.addEventListener("click", function () {
+            if (servicio) {
+                servicio.value = enlace.getAttribute("data-servicio");
+            }
+        });
+    });
+
     // Cuando mandan el formulario
     formulario.addEventListener("submit", function (e) {
         // Que no se recargue la página, qué verguenza

@@ -24,8 +24,9 @@
                     <div class="col-lg-7">
                         <h1 class="display-4 fw-bold">Servicios Informáticos y Venta de Hardware</h1>
                         <p class="lead">Mantenimiento de computadoras, ensamble de equipos y soporte especializado en Guatemala.</p>
-                        <a href="#servicios" class="btn btn-light btn-lg me-2">Ver Servicios</a>
-                        <a href="#contacto" class="btn btn-outline-light btn-lg">Contáctanos</a>
+                        <a href="#servicios" class="btn btn-light btn-lg me-2 mb-2">Ver Servicios</a>
+                        <a href="#empresas" class="btn btn-outline-light btn-lg me-2 mb-2">Servicios para empresas</a>
+                        <a href="#contacto" class="btn btn-outline-light btn-lg mb-2">Contáctanos</a>
                     </div>
                     <div class="col-lg-5 text-center mt-4 mt-lg-0">
                         <div class="hero-card">
@@ -54,7 +55,7 @@
                                 <p class="text-muted">
                                     Limpieza técnica profunda, cambio de pasta térmica, instalación de SSD y optimización del sistema operativo.
                                 </p>
-                                <a href="#contacto" class="btn btn-success">Solicitar Servicio</a>
+                                <a href="#contacto" class="btn btn-success" data-servicio="Reparación de computadoras">Solicitar Servicio</a>
                             </div>
                         </div>
                     </div>
@@ -66,7 +67,7 @@
                                 <p class="text-muted">
                                     Asesoría personalizada en selección de componentes, montaje profesional y pruebas de rendimiento.
                                 </p>
-                                <a href="#contacto" class="btn btn-success">Cotizar Ensamble</a>
+                                <a href="#contacto" class="btn btn-success" data-servicio="Ensamble de PC Gamer / Trabajo">Cotizar Ensamble</a>
                             </div>
                         </div>
                     </div>
@@ -78,7 +79,55 @@
                                 <p class="text-muted">
                                     Configuración de redes locales, cableado estructurado, servidores y conectividad para hogares y oficinas.
                                 </p>
-                                <a href="#contacto" class="btn btn-success">Solicitar Diagnóstico</a>
+                                <a href="#contacto" class="btn btn-success" data-servicio="Redes e Internet">Solicitar Diagnóstico</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {{-- Mecatrónica para empresas. No se mezcla con la reparación de computadoras. --}}
+        <section id="empresas" class="py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="section-title">Servicios para empresas</h2>
+                    <p class="text-muted">Mantenimiento industrial y apoyo en mecatrónica para talleres y plantas</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card service-card h-100">
+                            <div class="card-body text-center p-4">
+                                <div class="service-icon">⚙️</div>
+                                <h4>Mantenimiento de maquinaria</h4>
+                                <p class="text-muted">
+                                    Revisión, ajuste y mantenimiento preventivo de equipos industriales para que la producción no se detenga.
+                                </p>
+                                <a href="#contacto" class="btn btn-success" data-servicio="Mantenimiento de maquinaria">Solicitar mantenimiento</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card service-card h-100">
+                            <div class="card-body text-center p-4">
+                                <div class="service-icon">📡</div>
+                                <h4>Sensores y motores</h4>
+                                <p class="text-muted">
+                                    Instalación y revisión de sensores, motores y actuadores en líneas de trabajo y maquinaria existente.
+                                </p>
+                                <a href="#contacto" class="btn btn-success" data-servicio="Instalación de sensores y motores">Cotizar instalación</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card service-card h-100">
+                            <div class="card-body text-center p-4">
+                                <div class="service-icon">🔌</div>
+                                <h4>PLC y tableros eléctricos</h4>
+                                <p class="text-muted">
+                                    Apoyo en controladores lógicos programables y revisión de tableros para operación segura del equipo.
+                                </p>
+                                <a href="#contacto" class="btn btn-success" data-servicio="Apoyo en PLC y tableros eléctricos">Solicitar apoyo</a>
                             </div>
                         </div>
                     </div>
@@ -198,13 +247,20 @@
                                     <input type="text" class="form-control" required placeholder="Escriba su número telefónico">
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label">Seleccione su servicio</label>
-                                    <select class="form-select" required>
+                                    <label class="form-label" for="servicioContacto">Seleccione su servicio</label>
+                                    <select id="servicioContacto" class="form-select" required>
                                         <option value="" selected>Selecciona una opción</option>
-                                        <option>Reparación de computadoras</option>
-                                        <option>Mantenimiento de PC</option>
-                                        <option>Ensamble de PC Gamer / Trabajo</option>
-                                        <option>Redes e Internet</option>
+                                        <optgroup label="Computadoras">
+                                            <option>Reparación de computadoras</option>
+                                            <option>Mantenimiento de PC</option>
+                                            <option>Ensamble de PC Gamer / Trabajo</option>
+                                            <option>Redes e Internet</option>
+                                        </optgroup>
+                                        <optgroup label="Empresas">
+                                            <option>Mantenimiento de maquinaria</option>
+                                            <option>Instalación de sensores y motores</option>
+                                            <option>Apoyo en PLC y tableros eléctricos</option>
+                                        </optgroup>
                                     </select>
                                 </div>
                                 <div class="mb-3">
@@ -233,7 +289,7 @@
             <div class="row align-items-center">
                 <div class="col-md-6">
                     <h3>TechCenter</h3>
-                    <p class="mb-0">Servicios Informáticos y Venta de Hardware en Guatemala</p>
+                    <p class="mb-0">Computadoras y servicios industriales en Guatemala</p>
                 </div>
                 <div class="col-md-6 text-md-end mt-3 mt-md-0">
                     <p class="mb-0">&copy; 2026 Todos los derechos reservados</p>
