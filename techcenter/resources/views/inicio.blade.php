@@ -135,8 +135,54 @@
             </div>
         </section>
 
+        {{-- Quién hace cada trabajo: software, mecatrónica y el ensamble que comparten. --}}
+        <section id="nosotros" class="py-5 bg-light">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="section-title">Quiénes somos</h2>
+                    <p class="text-muted">Software y mecatrónica en el mismo taller, en Guatemala</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card service-card h-100">
+                            <div class="card-body text-center p-4">
+                                <div class="service-icon">💻</div>
+                                <h4>Hector Martinez</h4>
+                                <p class="text-muted">
+                                    Desarrollo de software a la medida: páginas, sistemas y programas que se conectan con el equipo.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card service-card h-100">
+                            <div class="card-body text-center p-4">
+                                <div class="service-icon">🔧</div>
+                                <h4>Julio Martinez</h4>
+                                <p class="text-muted">
+                                    Técnico en mecatrónica: maquinaria, sensores, motores, PLC y tableros eléctricos.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card service-card h-100">
+                            <div class="card-body text-center p-4">
+                                <div class="service-icon">🖥️</div>
+                                <h4>Construcción de computadoras</h4>
+                                <p class="text-muted">
+                                    Entre los dos arman computadoras para la casa, la oficina o el puesto de trabajo de una empresa.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-center mt-4 mb-0">La máquina y el programa pueden salir del mismo lugar.</p>
+            </div>
+        </section>
+
         <!-- Tips para que no se les muera la compu -->
-        <section id="recomendaciones" class="py-5 bg-light">
+        <section id="recomendaciones" class="py-5">
             <div class="container">
                 <div class="text-center mb-4">
                     <h2>Recomendaciones para el Cuidado de tu PC</h2>

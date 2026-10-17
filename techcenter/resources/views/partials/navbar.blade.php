@@ -18,6 +18,9 @@
                     <a class="nav-link" href="{{ $enInicio ? '#empresas' : route('inicio').'#empresas' }}">Empresas</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="{{ $enInicio ? '#nosotros' : route('inicio').'#nosotros' }}">Nosotros</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{{ $enInicio ? '#recomendaciones' : route('inicio').'#recomendaciones' }}">Recomendaciones</a>
                 </li>
                 <li class="nav-item">
