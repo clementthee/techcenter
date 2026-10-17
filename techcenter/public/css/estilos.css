@@ -455,6 +455,18 @@ section {
     }
 }
 
+.grafica {
+    max-height: 280px;
+}
+
+.navbar .nav-link.bg-transparent {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.navbar .nav-link.bg-transparent:hover {
+    color: #fff;
+}
+
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;

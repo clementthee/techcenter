@@ -20,6 +20,10 @@ document.addEventListener("DOMContentLoaded", function () {
         aplicarTema(actual === "dark" ? "light" : "dark");
     });
 
+    if (!formulario || !mensajeExito || !btnCerrar) {
+        return;
+    }
+
     // Cuando mandan el formulario
     formulario.addEventListener("submit", function (e) {
         // Que no se recargue la página, qué verguenza
