@@ -1,5 +1,7 @@
 <?php
 
+// Permite al usuario cambiar su nombre, su correo, su contraseña o borrar la cuenta.
+
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;

@@ -1,3 +1,4 @@
+{{-- Alta o edición de una pieza, con su costo, precio y existencias. --}}
 @extends('layouts.panel')
 
 @section('title', ($part->exists ? 'Editar parte' : 'Nueva parte').' - TechCenter')

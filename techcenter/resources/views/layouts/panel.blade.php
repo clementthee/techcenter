@@ -1,3 +1,4 @@
+{{-- Marco de las pantallas internas: barra, aviso y pie. El contenido va en @yield. --}}
 <!DOCTYPE html>
 <html lang="es">
 <head>

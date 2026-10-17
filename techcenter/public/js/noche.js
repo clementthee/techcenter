@@ -1,3 +1,4 @@
+// Modo claro/oscuro de toda la página, y el aviso del formulario de contacto.
 document.addEventListener("DOMContentLoaded", function () {
     const formulario = document.getElementById("formContacto");
     const mensajeExito = document.getElementById("mensajeExito");

@@ -1,3 +1,4 @@
+{{-- Formulario del nombre y el correo. --}}
 <section>
     <header>
         <h2 class="text-lg font-medium text-gray-900">

@@ -1,3 +1,5 @@
+/* Estilos propios de TechCenter. Van después de Bootstrap para poder corregirlo. */
+
 :root {
     --blanco: #ffffff;
     --texto: rgb(55, 55, 55);
@@ -453,6 +455,83 @@ section {
     .galeria-img {
         height: 220px;
     }
+}
+
+/* Botones de ingreso con Google, Microsoft y GitHub */
+.btn-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    width: 100%;
+    font-weight: 600;
+    padding: 0.7rem 1rem;
+}
+
+.btn-social svg {
+    width: 1.15rem;
+    height: 1.15rem;
+    flex-shrink: 0;
+}
+
+.btn-google {
+    background: #fff;
+    color: #3c4043;
+    border: 1px solid #dadce0;
+}
+
+.btn-google:hover {
+    background: #f8f9fa;
+    color: #202124;
+}
+
+.btn-microsoft {
+    background: #00a4ef;
+    color: #fff;
+    border: 1px solid #00a4ef;
+}
+
+.btn-microsoft:hover {
+    background: #0086c7;
+    color: #fff;
+}
+
+.btn-microsoft svg {
+    background: #fff;
+    border-radius: 2px;
+}
+
+.btn-github {
+    background: #24292f;
+    color: #fff;
+    border: 1px solid #24292f;
+}
+
+.btn-github:hover {
+    background: #1b1f23;
+    color: #fff;
+}
+
+.btn-social:disabled {
+    opacity: 0.72;
+    cursor: not-allowed;
+}
+
+.separador-acceso {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #6c757d;
+    margin: 1.25rem 0 0.25rem;
+    font-size: 0.9rem;
+}
+
+.separador-acceso::before,
+.separador-acceso::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #dee2e6;
 }
 
 .grafica {

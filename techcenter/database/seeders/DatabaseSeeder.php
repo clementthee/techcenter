@@ -7,6 +7,7 @@ use App\Models\Part;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
+/** Datos de prueba: un admin, un cliente, cinco piezas y un ensamble a medio armar. */
 class DatabaseSeeder extends Seeder
 {
     /**

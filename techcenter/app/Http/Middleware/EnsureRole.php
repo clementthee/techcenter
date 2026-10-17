@@ -6,6 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
+/** Deja pasar solo si el usuario tiene el rol indicado en la ruta. */
 class EnsureRole
 {
     /**

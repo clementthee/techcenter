@@ -1,3 +1,4 @@
+{{-- Registro de un cliente. También puede usar Google, Microsoft o GitHub. --}}
 @extends('layouts.panel')
 
 @section('title', 'Registrarse - TechCenter')

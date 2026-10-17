@@ -1,5 +1,7 @@
 <?php
 
+// Envoltorio de las pantallas internas que instaló Breeze.
+
 namespace App\View\Components;
 
 use Illuminate\View\Component;

@@ -1,3 +1,4 @@
+{{-- Todos los ensambles, con lo que se cobró, lo que costó y la ganancia. --}}
 @extends('layouts.panel')
 
 @section('title', 'Pedidos - TechCenter')

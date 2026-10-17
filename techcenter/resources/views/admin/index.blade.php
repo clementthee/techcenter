@@ -1,3 +1,4 @@
+{{-- Gráficas del negocio: ventas, costos, ganancia, existencias y pedidos. --}}
 @extends('layouts.panel')
 
 @section('title', 'Administración - TechCenter')

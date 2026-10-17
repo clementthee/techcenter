@@ -1,3 +1,4 @@
+{{-- Tabla del catálogo. Desde aquí se entra a crear o editar una pieza. --}}
 @extends('layouts.panel')
 
 @section('title', 'Catálogo - TechCenter')

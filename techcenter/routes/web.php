@@ -1,5 +1,7 @@
 <?php
 
+// Rutas de la página pública, el ingreso social, el panel del cliente y el del admin.
+
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\OrderController as AdminOrderController;
 use App\Http\Controllers\Admin\PartController;
@@ -8,18 +10,21 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SocialAuthController;
 use Illuminate\Support\Facades\Route;
 
+// Página pública del taller.
 Route::get('/', function () {
     return view('inicio');
 })->name('inicio');
 
+// Ingreso con Google, Microsoft o GitHub. El nombre del proveedor va en la URL.
 Route::get('auth/{provider}/redirect', [SocialAuthController::class, 'redirect'])
-    ->whereIn('provider', ['google', 'microsoft'])
+    ->whereIn('provider', ['google', 'microsoft', 'github'])
     ->name('social.redirect');
 
 Route::get('auth/{provider}/callback', [SocialAuthController::class, 'callback'])
-    ->whereIn('provider', ['google', 'microsoft'])
+    ->whereIn('provider', ['google', 'microsoft', 'github'])
     ->name('social.callback');
 
+// Después del login, manda al panel que corresponde al rol.
 Route::get('/dashboard', function () {
     return redirect(auth()->user()->panelRoute());
 })->middleware('auth')->name('dashboard');
@@ -30,11 +35,13 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+// Panel del cliente. Un admin no entra aquí.
 Route::middleware(['auth', 'role:cliente'])->prefix('cuenta')->name('cuenta.')->group(function () {
     Route::get('/', [CuentaController::class, 'index'])->name('inicio');
     Route::get('/pedidos/{order}', [CuentaController::class, 'show'])->name('pedidos.show');
 });
 
+// Panel del administrador: catálogo, inventario y todos los pedidos.
 Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('inicio');
     Route::get('/partes', [PartController::class, 'index'])->name('partes.index');

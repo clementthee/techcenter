@@ -1,3 +1,4 @@
+{{-- Página pública del taller: servicios, recomendaciones, galería y contacto. --}}
 <!DOCTYPE html>
 <!-- Página de TechCenter para la clase del INTECAP -->
 <html lang="es">

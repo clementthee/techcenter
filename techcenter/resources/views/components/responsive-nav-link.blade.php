@@ -1,3 +1,4 @@
+{{-- Enlace del menú cuando la pantalla es angosta. --}}
 @props(['active'])
 
 @php

@@ -1,3 +1,4 @@
+{{-- Muestra un aviso corto después de una acción de acceso. --}}
 @props(['status'])
 
 @if ($status)

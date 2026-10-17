@@ -1,3 +1,4 @@
+{{-- Enlace del menú de Breeze. --}}
 @props(['active'])
 
 @php

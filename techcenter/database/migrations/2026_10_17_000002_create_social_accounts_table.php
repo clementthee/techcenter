@@ -1,5 +1,7 @@
 <?php
 
+// Guarda qué cuenta de Google, Microsoft o GitHub pertenece a cada usuario.
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;

@@ -1,5 +1,7 @@
 <?php
 
+// Crea una cuenta de cliente con nombre, correo y contraseña.
+
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;

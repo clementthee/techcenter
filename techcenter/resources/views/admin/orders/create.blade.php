@@ -1,3 +1,4 @@
+{{-- Elige el cliente y cuántas piezas lleva el ensamble. Solo lista piezas con stock. --}}
 @extends('layouts.panel')
 
 @section('title', 'Nuevo pedido - TechCenter')

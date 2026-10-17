@@ -1,3 +1,4 @@
+{{-- Barra de todas las páginas. En el inicio los enlaces bajan a la sección; fuera, vuelven a ella. --}}
 @php($enInicio = request()->routeIs('inicio'))
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <div class="container">

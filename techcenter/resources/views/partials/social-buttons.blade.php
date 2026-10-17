@@ -1,22 +1,42 @@
+{{-- Botones de Google, Microsoft y GitHub. Sin llaves se ven igual, pero no redirigen. --}}
 @if (session('social_error'))
     <div class="alert alert-warning">{{ session('social_error') }}</div>
 @endif
 
 @php
-    $googleListo = filled(config('services.google.client_id')) && filled(config('services.google.client_secret'));
-    $microsoftListo = filled(config('services.microsoft.client_id')) && filled(config('services.microsoft.client_secret'));
+    $proveedores = [
+        'google' => [
+            'nombre' => 'Google',
+            'clase' => 'btn-google',
+            'listo' => filled(config('services.google.client_id')) && filled(config('services.google.client_secret')),
+        ],
+        'microsoft' => [
+            'nombre' => 'Microsoft',
+            'clase' => 'btn-microsoft',
+            'listo' => filled(config('services.microsoft.client_id')) && filled(config('services.microsoft.client_secret')),
+        ],
+        'github' => [
+            'nombre' => 'GitHub',
+            'clase' => 'btn-github',
+            'listo' => filled(config('services.github.client_id')) && filled(config('services.github.client_secret')),
+        ],
+    ];
 @endphp
 
-<div class="d-grid gap-2 mb-3">
-    @if ($googleListo)
-        <a class="btn btn-outline-dark" href="{{ route('social.redirect', 'google') }}">Continuar con Google</a>
-    @else
-        <button class="btn btn-outline-dark" type="button" disabled>Google todavía no está configurado</button>
-    @endif
-
-    @if ($microsoftListo)
-        <a class="btn btn-outline-primary" href="{{ route('social.redirect', 'microsoft') }}">Continuar con Microsoft</a>
-    @else
-        <button class="btn btn-outline-primary" type="button" disabled>Microsoft todavía no está configurado</button>
-    @endif
+<div class="d-grid gap-2">
+    @foreach ($proveedores as $clave => $proveedor)
+        @if ($proveedor['listo'])
+            <a class="btn btn-social {{ $proveedor['clase'] }}" href="{{ route('social.redirect', $clave) }}">
+                @include('partials.icono-'.$clave)
+                Continuar con {{ $proveedor['nombre'] }}
+            </a>
+        @else
+            <button class="btn btn-social {{ $proveedor['clase'] }}" type="button" disabled>
+                @include('partials.icono-'.$clave)
+                {{ $proveedor['nombre'] }} todavía no está configurado
+            </button>
+        @endif
+    @endforeach
 </div>
+
+<p class="separador-acceso">o entra con tu correo</p>

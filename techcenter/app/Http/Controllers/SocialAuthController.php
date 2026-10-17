@@ -10,8 +10,13 @@ use Illuminate\Support\Str;
 use Laravel\Socialite\Facades\Socialite;
 use Throwable;
 
+/**
+ * Ingreso con Google, Microsoft o GitHub.
+ * Si el correo ya existe, se enlaza a ese usuario. Si no, se crea un cliente.
+ */
 class SocialAuthController extends Controller
 {
+    /** Manda al usuario a la pantalla del proveedor. Si faltan llaves, regresa al login. */
     public function redirect(string $provider): RedirectResponse
     {
         $this->ensureProvider($provider);
@@ -22,9 +27,17 @@ class SocialAuthController extends Controller
                 ->with('social_error', 'El ingreso con '.ucfirst($provider).' todavía no está configurado.');
         }
 
-        return Socialite::driver($provider)->redirect();
+        $driver = Socialite::driver($provider);
+
+        // GitHub no manda el correo si la cuenta lo tiene privado. Este permiso lo pide aparte.
+        if ($provider === 'github') {
+            $driver->scopes(['user:email']);
+        }
+
+        return $driver->redirect();
     }
 
+    /** Recibe la respuesta del proveedor y abre la sesión. */
     public function callback(string $provider): RedirectResponse
     {
         $this->ensureProvider($provider);
@@ -78,8 +91,9 @@ class SocialAuthController extends Controller
         return redirect()->intended($user->panelRoute());
     }
 
+    /** Solo estos tres nombres son válidos en la URL. */
     private function ensureProvider(string $provider): void
     {
-        abort_unless(in_array($provider, ['google', 'microsoft'], true), 404);
+        abort_unless(in_array($provider, ['google', 'microsoft', 'github'], true), 404);
     }
 }

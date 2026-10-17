@@ -1,5 +1,7 @@
 <?php
 
+// Partes de un ensamble. El costo y el precio quedan fijos al momento de la venta.
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;

@@ -9,8 +9,10 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\View\View;
 
+/** Catálogo de piezas. Crear y editar también cambia las existencias. */
 class PartController extends Controller
 {
+    /** Lista el catálogo con costo, precio y existencias. */
     public function index(): View
     {
         return view('admin.parts.index', [
@@ -18,6 +20,7 @@ class PartController extends Controller
         ]);
     }
 
+    /** Formulario para una pieza nueva. */
     public function create(): View
     {
         return view('admin.parts.form', [
@@ -25,6 +28,7 @@ class PartController extends Controller
         ]);
     }
 
+    /** Guarda la pieza en el inventario. */
     public function store(Request $request): RedirectResponse
     {
         Part::create($this->validated($request));
@@ -34,6 +38,7 @@ class PartController extends Controller
             ->with('status', 'La parte quedó en el catálogo.');
     }
 
+    /** Formulario para corregir una pieza o sus existencias. */
     public function edit(Part $part): View
     {
         return view('admin.parts.form', [
@@ -41,6 +46,7 @@ class PartController extends Controller
         ]);
     }
 
+    /** Actualiza la pieza, incluido el stock. */
     public function update(Request $request, Part $part): RedirectResponse
     {
         $part->update($this->validated($request, $part));

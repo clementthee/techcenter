@@ -1,3 +1,4 @@
+{{-- Marco visual de Breeze para el perfil. --}}
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>

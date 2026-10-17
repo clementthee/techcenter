@@ -1,5 +1,7 @@
 <?php
 
+// Guarda la contraseña nueva cuando el enlace de recuperación es válido.
+
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;

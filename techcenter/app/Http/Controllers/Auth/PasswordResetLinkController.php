@@ -1,5 +1,7 @@
 <?php
 
+// Pide el correo para enviar el enlace de recuperación.
+
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;

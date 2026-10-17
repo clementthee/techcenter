@@ -1,5 +1,7 @@
 <?php
 
+// Entra con correo y contraseña, y cierra la sesión.
+
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;

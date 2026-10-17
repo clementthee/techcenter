@@ -1,5 +1,7 @@
 <?php
 
+// Vuelve a pedir la contraseña antes de una acción delicada.
+
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;

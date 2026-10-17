@@ -8,8 +8,10 @@ use App\Models\OrderItem;
 use App\Models\Part;
 use Illuminate\View\View;
 
+/** Resumen del negocio: inventario, ventas, costos y ganancia. */
 class DashboardController extends Controller
 {
+    /** Junta los totales que dibujan las gráficas del administrador. */
     public function index(): View
     {
         $parts = Part::query()->orderBy('category')->orderBy('name')->get();

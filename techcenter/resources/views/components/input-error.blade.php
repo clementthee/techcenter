@@ -1,3 +1,4 @@
+{{-- Muestra el error de un campo del formulario. --}}
 @props(['messages'])
 
 @if ($messages)

@@ -1,3 +1,4 @@
+{{-- Resumen del cliente: gasto, estados de sus ensambles y la lista de pedidos. --}}
 @extends('layouts.panel')
 
 @section('title', 'Mis pedidos - TechCenter')

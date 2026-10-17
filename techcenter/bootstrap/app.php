@@ -13,6 +13,7 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
+        // role:cliente y role:admin se usan en routes/web.php.
         $middleware->alias([
             'role' => EnsureRole::class,
         ]);

@@ -1,5 +1,7 @@
 <?php
 
+// Marca el correo como confirmado cuando el enlace es válido.
+
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;

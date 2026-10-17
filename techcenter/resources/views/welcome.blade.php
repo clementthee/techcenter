@@ -1,3 +1,4 @@
+{{-- Página de ejemplo de Laravel. La raíz del sitio usa inicio, no esta vista. --}}
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>

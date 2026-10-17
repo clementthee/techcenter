@@ -1,3 +1,4 @@
+{{-- Pantalla intermedia de Breeze. La ruta /dashboard redirige al panel del rol. --}}
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">

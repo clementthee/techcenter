@@ -1,3 +1,4 @@
+{{-- Ingreso con un proveedor o con correo y contraseña. --}}
 @extends('layouts.panel')
 
 @section('title', 'Ingresar - TechCenter')

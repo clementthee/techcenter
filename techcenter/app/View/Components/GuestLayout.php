@@ -1,5 +1,7 @@
 <?php
 
+// Envoltorio de las pantallas de recuperación de contraseña.
+
 namespace App\View\Components;
 
 use Illuminate\View\Component;

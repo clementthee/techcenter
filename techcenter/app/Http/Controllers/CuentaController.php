@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Order;
 use Illuminate\View\View;
 
+/** Lo que ve el cliente después de entrar: sus ensambles, partes y gasto. */
 class CuentaController extends Controller
 {
+    /** Lista los ensambles y arma los números de la gráfica. */
     public function index(): View
     {
         $orders = auth()->user()
@@ -26,6 +28,7 @@ class CuentaController extends Controller
         ]);
     }
 
+    /** Detalle de un ensamble. Solo lo puede abrir su dueño. */
     public function show(Order $order): View
     {
         abort_unless($order->user_id === auth()->id(), 403);

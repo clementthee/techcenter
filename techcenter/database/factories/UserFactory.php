@@ -1,5 +1,7 @@
 <?php
 
+// Crea usuarios de prueba. La contraseña es password.
+
 namespace Database\Factories;
 
 use App\Models\User;

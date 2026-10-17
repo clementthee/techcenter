@@ -1,3 +1,4 @@
+{{-- Detalle de un ensamble y el control para cambiar su estado. --}}
 @extends('layouts.panel')
 
 @section('title', 'Pedido #'.$order->id.' - TechCenter')

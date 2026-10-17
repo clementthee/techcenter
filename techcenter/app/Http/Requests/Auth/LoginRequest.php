@@ -1,5 +1,7 @@
 <?php
 
+// Valida el correo y la contraseña, y limita los intentos fallidos.
+
 namespace App\Http\Requests\Auth;
 
 use Illuminate\Auth\Events\Lockout;

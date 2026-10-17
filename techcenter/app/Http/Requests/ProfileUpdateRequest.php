@@ -1,5 +1,7 @@
 <?php
 
+// Reglas para cambiar el nombre y el correo del perfil.
+
 namespace App\Http\Requests;
 
 use App\Models\User;

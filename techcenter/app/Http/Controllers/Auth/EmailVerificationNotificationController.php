@@ -1,5 +1,7 @@
 <?php
 
+// Reenvía el correo de confirmación.
+
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;

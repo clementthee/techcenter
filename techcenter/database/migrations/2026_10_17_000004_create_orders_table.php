@@ -1,5 +1,7 @@
 <?php
 
+// Un ensamble encargado por un cliente, con su estado.
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;

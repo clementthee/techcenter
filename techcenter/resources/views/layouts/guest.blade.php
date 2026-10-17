@@ -1,3 +1,4 @@
+{{-- Marco visual de Breeze para recuperar la contraseña. --}}
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>

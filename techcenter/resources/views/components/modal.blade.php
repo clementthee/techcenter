@@ -1,3 +1,4 @@
+{{-- Ventana de confirmación, usada al borrar la cuenta. --}}
 @props([
     'name',
     'show' => false,

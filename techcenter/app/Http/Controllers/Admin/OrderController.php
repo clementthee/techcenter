@@ -13,8 +13,13 @@ use Illuminate\Validation\Rule;
 use Illuminate\Validation\ValidationException;
 use Illuminate\View\View;
 
+/**
+ * Pedidos de todos los clientes.
+ * Al crear uno se copian costo y precio de ese momento y se descuenta el stock.
+ */
 class OrderController extends Controller
 {
+    /** Lista todos los ensambles, con cliente, total, costo y ganancia. */
     public function index(): View
     {
         return view('admin.orders.index', [
@@ -22,6 +27,7 @@ class OrderController extends Controller
         ]);
     }
 
+    /** Formulario para armar un pedido con las piezas que todavía tienen stock. */
     public function create(): View
     {
         return view('admin.orders.create', [
@@ -30,6 +36,7 @@ class OrderController extends Controller
         ]);
     }
 
+    /** Crea el ensamble y descuenta las existencias en la misma operación. */
     public function store(Request $request): RedirectResponse
     {
         $data = $request->validate([
@@ -83,6 +90,7 @@ class OrderController extends Controller
             ->with('status', 'El pedido quedó registrado y el inventario se descontó.');
     }
 
+    /** Detalle del ensamble y el formulario para cambiar su estado. */
     public function show(Order $order): View
     {
         $order->load(['user', 'items.part']);
@@ -92,6 +100,7 @@ class OrderController extends Controller
         ]);
     }
 
+    /** Cambia el estado: recibido, comprando partes, ensamblando, listo o entregado. */
     public function update(Request $request, Order $order): RedirectResponse
     {
         $data = $request->validate([
